@@ -1,19 +1,19 @@
 class SchoolClassesController < ApplicationController
-  
+
 	def show
-		@post = Post.find(params[:id])
+		@school_class = SchoolClass.find(params[:id])
 	end
 
 	def new
-		@post = Post.new
+		@school_class = Post.new
 	end
 
 	def create
-	  @post = Post.new
-	  @post.title = params[:title]
-	  @post.description = params[:description]
-	  @post.save
-	  redirect_to post_path(@post)
+	  @school_class = Post.new
+	  @school_class.title = params[:title]
+	  @school_class.room_number = params[:room_number]
+	  @school_class.save
+	  redirect_to school_class_path(@school_class)
 	end
 
 	def edit
